@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
+type messaggio = { text:string ; sender:boolean}
 
 const Rectangle: React.FC = () => {
   const [message, setMessage] = useState<string>('');
-  const [messages, setMessages] = useState<string[]>([]);
+  const [messageArray, setMessages] = useState<string[]>([]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
@@ -12,7 +13,7 @@ const Rectangle: React.FC = () => {
 
   const handleSendMessage = () => {
     if (message.trim()) {
-      setMessages([...messages, message]);
+      setMessages([...messageArray, message]);
       setMessage('');
     }
   };
@@ -22,8 +23,10 @@ const Rectangle: React.FC = () => {
       <div className="chat-box">
         <h1 className="chat-header">Chat</h1>
         <p className="chat-subheader">Lista Messaggi.</p>
-        <MessageList messages={messages} />
-        <MessageInput
+        <MessageList 
+          messages={messageArray} 
+          />
+        <MessageInput 
           message={message}
           handleInputChange={handleInputChange}
           handleSendMessage={handleSendMessage}
