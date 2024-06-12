@@ -1,0 +1,38 @@
+/* styles.css */
+
+.btn-primary {
+    @apply bg-blue-700 hover:bg-blue-600 text-white rounded-full p-2;
+  }
+  
+  .textarea-primary {
+    @apply flex-grow bg-blue-500 text-white rounded-full p-2 focus:outline-none resize-none;
+  }
+  
+  .chat-container {
+    @apply flex items-center justify-center min-h-screen bg-gray-100;
+  }
+  
+  .chat-box {
+    @apply bg-white rounded-lg shadow-lg p-8 relative w-full max-w-2xl h-auto lg:h-96;
+  }
+  
+  .chat-header {
+    @apply text-2xl font-bold mb-4;
+  }
+  
+  .chat-subheader {
+    @apply mb-4;
+  }
+  
+  .message-list {
+    @apply overflow-hidden h-64 mb-4;
+  }
+  
+  .message-item {
+    @apply bg-gray-200 text-black rounded-lg p-4 mb-4;
+  }
+  
+  .message-input-container {
+    @apply flex items-center bg-blue-500 text-white rounded-full p-4;
+  }
+  

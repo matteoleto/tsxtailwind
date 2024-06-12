@@ -1,0 +1,27 @@
+// Questa parte di codice riguarda principalmente la gestione del comportamento dello scrolling all'interno dell'area dei messaggi nel componente `Rectangle`. Ecco una spiegazione più dettagliata:
+
+// 1. **Stato del componente**:
+//    - `message`: Lo stato che tiene traccia del valore corrente dell'area di testo dove l'utente può digitare il messaggio.
+//    - `messages`: Lo stato che tiene traccia di tutti i messaggi inviati dall'utente.
+//    - `messagesEndRef`: È un riferimento creato tramite `useRef` che punta all'ultimo elemento della lista dei messaggi. Questo riferimento sarà utilizzato per far sì che l'area dei messaggi si scrollerà automaticamente verso il basso ogni volta che viene inviato un nuovo messaggio.
+
+// 2. **Funzione `scrollToBottom`**:
+//    - Questa funzione utilizza `scrollIntoView` per far sì che l'elemento puntato da `messagesEndRef` (cioè l'ultimo elemento della lista dei messaggi) sia visibile nello schermo. Il parametro `{ behavior: 'smooth' }` rende lo scrolling più fluido e animato.
+
+// 3. **Effetto `useEffect`**:
+//    - Questo effetto viene attivato ogni volta che il valore dello stato `messages` cambia (quindi ogni volta che viene inviato un nuovo messaggio).
+//    - Quando viene attivato, chiama la funzione `scrollToBottom`, garantendo che la lista dei messaggi scrollerà automaticamente verso il basso per visualizzare il nuovo messaggio.
+
+// 4. **Funzione `handleInputChange`**:
+//    - Questa funzione viene chiamata ogni volta che viene modificato il valore dell'area di testo (ad esempio, quando l'utente digita qualcosa).
+//    - Aggiorna lo stato `message` con il valore attuale dell'area di testo.
+
+// 5. **Funzione `handleSendMessage`**:
+//    - Questa funzione viene chiamata quando l'utente preme il pulsante di invio.
+//    - Se il messaggio non è vuoto dopo averlo trimmato, aggiunge il messaggio all'array `messages` utilizzando lo stato `setMessages` e poi resetta lo stato `message` a una stringa vuota, in modo che l'area di testo sia pronta per l'inserimento di un nuovo messaggio.
+
+
+
+// In sintesi, useEffect viene utilizzato per eseguire uno scroll automatico verso il fondo 
+// dell'area dei messaggi ogni volta che viene aggiunto un nuovo messaggio. 
+// Questo comportamento è ottenuto monitorando le modifiche all'array messages e chiamando la funzione scrollToBottom ogni volta che l'array cambia.
