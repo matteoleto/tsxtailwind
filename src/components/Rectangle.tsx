@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React, { ButtonHTMLAttributes, useState } from 'react';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
-type messaggio = { text:string ; sender:boolean}
+import { InputType } from 'zlib';
+import { Messaggio } from './types';
 
 const Rectangle: React.FC = () => {
   const [message, setMessage] = useState<string>('');
-  const [messageArray, setMessages] = useState<string[]>([]);
+  const [messageArray, setMessageArray] = useState<Messaggio[]>([]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => { 
     setMessage(e.target.value);
   };
 
   const handleSendMessage = () => {
     if (message.trim()) {
-      setMessages([...messageArray, message]);
+      let inArray:Messaggio={text:message , sender:true}
+      setMessageArray([...messageArray, inArray]);
       setMessage('');
     }
   };

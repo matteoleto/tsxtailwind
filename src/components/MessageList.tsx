@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from 'react';
-
+import { Messaggio } from './types';
+import ListItem from './ListItem';
 interface MessageListProps {
-  messages: string[];
+  messages: Messaggio[];
 }
 
 const MessageList: React.FC<MessageListProps> = ({ messages }) => {
@@ -18,10 +19,8 @@ const MessageList: React.FC<MessageListProps> = ({ messages }) => {
   return (
     <div className="message-list">
       <div className="overflow-y-auto h-full">
-        {messages.map((msg, index) => (
-          <div key={index} className="message-item">
-            {msg}
-          </div>
+        {messages.map((messages) => (
+          <ListItem text={messages.text} sender={messages.sender}></ListItem>
         ))}
         <div ref={messagesEndRef} />
       </div>
