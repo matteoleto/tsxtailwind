@@ -1,7 +1,6 @@
-import React, { ButtonHTMLAttributes, useState } from 'react';
+import React, { useState } from 'react';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
-import { InputType } from 'zlib';
 import { Messaggio } from './types';
 
 const Rectangle: React.FC = () => {
@@ -14,20 +13,20 @@ const Rectangle: React.FC = () => {
 
   const handleSendMessage = () => {
     if (message.trim()) {
-      let inArray:Messaggio={text:message , sender:true}
+      let inArray: Messaggio = { text: message, sender: true };
       setMessageArray([...messageArray, inArray]);
       setMessage('');
     }
   };
 
   return (
-    <div className="chat-container">
+    <div className="chat-container flex-1 h-screen p-4 bg-white">
       <div className="chat-box">
         <h1 className="chat-header">Chat</h1>
         <p className="chat-subheader">Lista Messaggi.</p>
         <MessageList 
           messages={messageArray} 
-          />
+        />
         <MessageInput 
           message={message}
           handleInputChange={handleInputChange}

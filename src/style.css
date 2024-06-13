@@ -5,7 +5,7 @@
   }
   
   .textarea-primary {
-    @apply flex-grow bg-blue-500 text-white rounded-full p-2 focus:outline-none resize-none;
+    @apply flex-grow bg-blue-500 text-white rounded-full focus:outline-none resize-none;
   }
   
   .chat-container {

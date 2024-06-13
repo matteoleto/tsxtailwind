@@ -1,12 +1,12 @@
 import React from 'react';
-import Rectangle from './Rectangle';
-import 'tailwindcss/tailwind.css';
-
+import Sidebar from './Sidebar';  // Assicurati di avere il percorso corretto
+import Rectangle from './Rectangle'; // Assicurati di avere il percorso corretto
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <Rectangle />
+    <div className="App flex">
+      <Sidebar />
+      <Rectangle />  
     </div>
   );
 };
