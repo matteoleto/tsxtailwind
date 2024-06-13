@@ -17,8 +17,12 @@ function ListItem(prop: Messaggio) {
       <button className="bg-gray-400 hover:bg-gray-600 text-white rounded-full h-8 w-8 flex items-center justify-center">
         <FontAwesomeIcon icon={faEdit} />
       </button>
-    </div>
-  );
-}
+        </div>
 
-export default ListItem;
+    )
+
+    function modifyMessage(){
+        
+    }
+}
+export default ListItem

@@ -10,7 +10,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ message, handleInputChange,
   <div className="message-input-container">
     <textarea
       className="textarea-primary bg-slate-400"
-      placeholder="Scrivi un messaggio..."
+      placeholder=" Scrivi un messaggio..."
       value={message}
       onChange={handleInputChange}
     ></textarea>
