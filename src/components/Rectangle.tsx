@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
+import { InputType } from 'zlib';                                   //libreria inutile
 import { Messaggio } from './types';
 
 const Rectangle: React.FC = () => {
