@@ -10,7 +10,6 @@ async function MessageChatGPT(messageToAnswear: string):Promise<Messaggio|null>
             messages: [{ role: 'user', content: messageToAnswear }]
         }, {
             headers: {
-                //'Authorization': `Bearer KEY`,
                 'Content-Type': 'application/json'
             }
         });
