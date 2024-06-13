@@ -13,7 +13,7 @@ const Rectangle: React.FC = () => {
 
   const handleSendMessage = () => {
     if (message.trim()) {
-      let inArray: Messaggio = { text: message, sender: true };
+      let inArray: Messaggio = { text: message, sender: false };
       setMessageArray([...messageArray, inArray]);
       setMessage('');
     }
