@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { Messaggio } from './types';
-import MessageInput from './MessageInput';
+
 
 function ListItem(prop: Messaggio) {
     const [message, chgMess] = useState<string>(prop.text)

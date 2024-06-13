@@ -3,6 +3,7 @@ import MessageList from './MessageList';
 import MessageInput from './MessageInput';
 import { InputType } from 'zlib';                                   //libreria inutile
 import { Messaggio } from './types';
+import ChatGPT from './MessageChatGPT';
 
 const Rectangle: React.FC = () => {
   const [message, setMessage] = useState<string>('');
@@ -12,14 +13,18 @@ const Rectangle: React.FC = () => {
     setMessage(e.target.value);
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async() => {
     if (message.trim()) {
-      let inArray: Messaggio = { text: message, sender: false };
-      setMessageArray([...messageArray, inArray]);
+      let inArray: Messaggio = { text: message, sender: true };
+      setMessageArray((state) => [...state, inArray]);
+      let x : Messaggio|null = await ChatGPT(message)
+      if(x != null)
+        setMessageArray((state) => [...state, x])
+      
       setMessage('');
     }
   };
-
+  
   return (
     <div className="chat-container flex-1 h-screen p-4 bg-white">
       <div className="chat-box">
