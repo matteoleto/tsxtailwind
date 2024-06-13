@@ -9,9 +9,6 @@ async function MessageChatGPT(messageToAnswear: string):Promise<Messaggio|null>
             model: 'gpt-3.5', // Usa il modello appropriato
             messages: [{ role: 'user', content: messageToAnswear }]
         }, {
-            headers: {
-                'Content-Type': 'application/json'
-            }
         });
 
         const answer = response.data.choices[0].message.content;
