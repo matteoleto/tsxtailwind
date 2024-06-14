@@ -18,9 +18,7 @@ function ListItem(prop: Messaggio) {
       <div className="flex-1">{message}</div>
       <button className="bg-gray-400 hover:bg-gray-600 text-white rounded-full h-8 w-8 flex items-center justify-center" onClick={() =>
         {
-            alert("Il vaore del message : " + message)
             let x:string = document.getElementsByClassName("textarea-primary bg-slate-400").item(0)?.value
-            alert("Il valore della textArea: " + x)
             chgMess(x)
         }
     }>
