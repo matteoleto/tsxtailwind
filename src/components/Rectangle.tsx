@@ -11,7 +11,6 @@ const Rectangle: React.FC = () => {
   const [message, setMessage] = useState<string>('');
   const [messageArray, setMessageArray] = useState<Messaggio[]>([]);
   let colorModify = colorePrincipale
-  let stringColor:string=cambiaColore(colorModify)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => { 
     setMessage(e.target.value);
@@ -42,7 +41,7 @@ const Rectangle: React.FC = () => {
           handleInputChange={handleInputChange}
           handleSendMessage={handleSendMessage}
         />
-        <i className="fas fa-comment-alt absolute top-4 right-4 text-blue -500"></i>
+        <i className={"fas fa-comment-alt absolute top-4 right-4 text-"+cambiaColore(colorModify)+"-500"}></i>
       </div>
     </div>
   );
