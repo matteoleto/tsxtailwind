@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 
 
 const Sidebar: React.FC = () => {
-  const [colore, setColore] = useState<string>("bg-menu-bg w-72 h-screen p-4 bg-"+cambiaColore(0)+"-600")
-  let classToChange:string = "bg-menu-bg w-72 h-screen p-4 bg-"+colore+"-600"
+  const preClassString:string = "bg-menu-bg w-72 h-screen p-4 bg-"
+  const postClassString:string = "-600"
+  const [colore, setColore] = useState<string>(preClassString+cambiaColore(0)+postClassString)
+  setColore(preClassString+  cambiaColore(0)+postClassString)
   return (
-    <div className={classToChange}>
+    <div className={colore}>
       <h2 className="text-4xl font-bold mb-4 text-white pt-4"></h2>
-      <ul>
-        {/* <li className="mb-2"><a href="#" className="text-white">Link 1</a></li>
-        <li className="mb-2"><a href="#" className="text-white">Link 2</a></li>
-        <li className="mb-2"><a href="#" className="text-white">Link 3</a></li>
-        <li className="mb-2"><a href="#" className="text-white ">Link 4</a></li> */}
-      </ul>
+      <button className='bg-blue-600' onClick={()=>setColore(preClassString+cambiaColore(0)+postClassString)}></button>
+      <button className='bg-red-600' onClick={()=>setColore(preClassString+cambiaColore(1)+postClassString)}></button>
+      <button className='bg-green-600' onClick={()=>setColore(preClassString+cambiaColore(2)+postClassString)}></button>
+      <button className='bg-purple-600' onClick={()=>setColore(preClassString+cambiaColore(3)+postClassString)}></button>
+      <button className='bg-yellow-600' onClick={()=>setColore(preClassString+cambiaColore(4)+postClassString)}></button>
     </div>
   );
 };
@@ -27,6 +28,7 @@ export function cambiaColore(n:number):string{
     case 4: coloreSelezionato="yellow"; break;
     default: coloreSelezionato="blue"; break;
   }
+  colorePrincipale = n
   return coloreSelezionato
 }
 
