@@ -4,13 +4,11 @@ import MessageInput from './MessageInput';
 import { InputType } from 'zlib';                                   //libreria inutile
 import { Messaggio } from './types';
 import ChatGPT from './MessageChatGPT';
-import { cambiaColore } from './Sidebar';
 import { colorePrincipale } from './Sidebar';
 
 const Rectangle: React.FC = () => {
   const [message, setMessage] = useState<string>('');
   const [messageArray, setMessageArray] = useState<Messaggio[]>([]);
-  let colorModify = colorePrincipale
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => { 
     setMessage(e.target.value);
@@ -41,10 +39,21 @@ const Rectangle: React.FC = () => {
           handleInputChange={handleInputChange}
           handleSendMessage={handleSendMessage}
         />
-        <i className={"fas fa-comment-alt absolute top-4 right-4 text-"+cambiaColore(colorModify)+"-500"}></i>
+        <i className={"fas fa-comment-alt absolute top-4 right-4 text-"+cambiaColore(colorePrincipale)+"-500"}></i>
       </div>
     </div>
   );
 };
-
+function cambiaColore(n:number):string{
+  let coloreSelezionato:string=""
+  switch(n)
+  {
+    case 1: coloreSelezionato="red"; break;
+    case 2: coloreSelezionato="green"; break;
+    case 3: coloreSelezionato="purple"; break;
+    case 4: coloreSelezionato="yellow"; break;
+    default: coloreSelezionato="blue"; break;
+  }
+  return coloreSelezionato
+}
 export default Rectangle;
