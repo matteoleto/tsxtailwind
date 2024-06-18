@@ -19,7 +19,10 @@ function ListItem(prop: Messaggio) {
       <button className="bg-gray-400 hover:bg-gray-600 text-white rounded-full h-8 w-8 flex items-center justify-center" onClick={() =>
         {
             let x:string = document.getElementsByClassName("textarea-primary bg-slate-400").item(0)?.value
-            chgMess(x)
+            if (!x)
+              alert("Inserisci un valore nella barra sottostante")
+            else
+              chgMess(x)
         }
     }>
         <FontAwesomeIcon icon={faEdit} />
