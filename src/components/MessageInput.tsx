@@ -21,7 +21,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ message, handleInputChange,
 
   return (<div className="message-input-container">
     <textarea
-      className={"flex-grow bg-"+color+"-500 text-white rounded-full p-2 focus:outline-none resize-none ml-4 bg-slate-400"}
+      className={"flex-grow bg-"+color+"-500 text-white rounded-full p-2 focus:outline-none resize-none ml-4 bg-blue-500"}
       placeholder=" Scrivi un messaggio..."
       value={message}
       onChange={handleInputChange}

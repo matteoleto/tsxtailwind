@@ -1,11 +1,11 @@
 /* styles.css */
-import 
+
 .btn-primary {
-    @apply bg-blue-700 hover:bg-blue-600 text-white rounded-full p-2 mr-5;
+    @apply bg-blue-700 text-white rounded-full p-2 mr-5;
   }
   
   .textarea-primary {
-    @apply flex-grow bg-blue-500 text-white rounded-full p-2 focus:outline-none resize-none ml-4;
+    @apply flex-grow bg-red-500  text-white rounded-full p-2 focus:outline-none resize-none ml-4;
   }
   
   .chat-container {
@@ -33,6 +33,6 @@ import
   }
   
   .message-input-container {
-    @apply flex items-center bg-blue-500 text-white rounded-full;
+    @apply flex items-center text-white rounded-full;
   }
   
