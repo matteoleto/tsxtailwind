@@ -47,7 +47,7 @@ const Rectangle: React.FC = () => {
           handleInputChange={handleInputChange}
           handleSendMessage={handleSendMessage}
         />
-        <i className={`fas fa-comment-alt absolute top-4 right-4 text-${color}-500`}></i>
+        <i className={"fas fa-comment-alt absolute top-4 right-4 text-"+color+"-500"}></i>
       </div>
     </div>
   );

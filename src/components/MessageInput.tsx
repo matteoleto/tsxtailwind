@@ -17,7 +17,6 @@ const MessageInput: React.FC<MessageInputProps> = ({ message, handleInputChange,
     throw new Error('ThemeContext must be used within a ThemeContext.Provider');
   }
   const {color, setColor} = themeContext
-  let color2 = color
 
   return (<div className="message-input-container">
     <textarea
@@ -27,7 +26,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ message, handleInputChange,
       onChange={handleInputChange}
     ></textarea>
     <button
-      className="btn-primary"
+      className={"bg-"+color+"-700 text-white rounded-full p-2 mr-5"}
       onClick={handleSendMessage}
     >
       <i className="fas fa-paper-plane"></i>
