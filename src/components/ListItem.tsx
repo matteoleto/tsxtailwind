@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { Messaggio } from './types';
+import { ThemeContext } from './App';
 
 
 function ListItem(prop: Messaggio) {
     const [message, chgMess] = useState<string>(prop.text)
+    const themeContext = useContext(ThemeContext)
+    console.log(themeContext)
+    if (!themeContext) {
+      throw new Error('ThemeContext must be used within a ThemeContext.Provider');
+    }
+    const {color, setColor} = themeContext
   let chId: string;
   if (prop.sender) {
     chId = "flex items-center justify-between p-2 bg-gray-100 rounded-md mb-2"; // Assign appropriate class or ID for sender
   } else {
-    chId = "flex items-center justify-between p-2 bg-blue-200 rounded-md mb-2"; // Assign appropriate class or ID for receiver
+    chId = "flex items-center justify-between p-2 bg-"+color+"-200 rounded-md mb-2"; // Assign appropriate class or ID for receiver
   }
 
   return (
