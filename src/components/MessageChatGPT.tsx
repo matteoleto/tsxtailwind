@@ -29,8 +29,9 @@ async function MessageChatGPT(cityToSearch: string): Promise<Messaggio | null> {
 
         const coords = cityCords.get(cityToSearch);
 
+        const time = new Date().toLocaleTimeString()
         const date = new Date().toISOString().split('T')[0]; // get current date in YYYY-MM-DD format
-        const url = "https://api.meteomatics.com/"+date+"T00:00:00Z/t_2m:C/"+coords+"/json?access_token=";
+        const url = "https://api.meteomatics.com/"+date+"T"+time+"Z/t_2m:C/"+coords+"/json?access_token=";
 
         const response = await axios.get<Response>(url, { headers: { Authorization: 'Bearer '+token} });
 
