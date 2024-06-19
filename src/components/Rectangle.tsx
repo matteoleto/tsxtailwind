@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
 import { InputType } from 'zlib';                                   //libreria inutile
 import { Messaggio } from './types';
 import ChatGPT from './MessageChatGPT';
-import { colorePrincipale } from './Sidebar';
+import { ThemeContext } from './App';
+
 
 const Rectangle: React.FC = () => {
   const [message, setMessage] = useState<string>('');
   const [messageArray, setMessageArray] = useState<Messaggio[]>([]);
+
+  const themeContext = useContext(ThemeContext)
+  console.log(themeContext)
+  if (!themeContext) {
+    throw new Error('ThemeContext must be used within a ThemeContext.Provider');
+  }
+  const {color, setColor} = themeContext
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => { 
     setMessage(e.target.value);
@@ -39,21 +47,9 @@ const Rectangle: React.FC = () => {
           handleInputChange={handleInputChange}
           handleSendMessage={handleSendMessage}
         />
-        <i className={"fas fa-comment-alt absolute top-4 right-4 text-"+cambiaColore(colorePrincipale)+"-500"}></i>
+        <i className={`fas fa-comment-alt absolute top-4 right-4 text-${color}-500`}></i>
       </div>
     </div>
   );
 };
-function cambiaColore(n:number):string{
-  let coloreSelezionato:string=""
-  switch(n)
-  {
-    case 1: coloreSelezionato="red"; break;
-    case 2: coloreSelezionato="green"; break;
-    case 3: coloreSelezionato="purple"; break;
-    case 4: coloreSelezionato="yellow"; break;
-    default: coloreSelezionato="blue"; break;
-  }
-  return coloreSelezionato
-}
 export default Rectangle;
