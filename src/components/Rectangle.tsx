@@ -23,6 +23,7 @@ const Rectangle: React.FC = () => {
   };
 
   const handleSendMessage = async() => {
+    
     if (message.trim()) {
       let inArray: Messaggio = { text: message, sender: true };
       setMessageArray((state) => [...state, inArray]);
@@ -37,7 +38,7 @@ const Rectangle: React.FC = () => {
   return (
     <div className="chat-container flex-1 h-screen p-4 bg-white">
       <div className="chat-box">
-        <h1 className="chat-header">Chat</h1>
+        <h1 className={"text-2xl font-bold mb-5 text-"+color+"-700"}>Chat</h1>
         <p className="chat-subheader">Lista Messaggi.</p>
         <MessageList 
           messages={messageArray} 
