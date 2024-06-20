@@ -1,5 +1,3 @@
-
-
 export const cityCords = new Map<string, string>([
     ["New York", "40.7128,-74.0060"],
     ['Los Angeles', "34.0522,-118.2437"],

@@ -1,7 +1,6 @@
-import React, { useContext, useMemo, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
-import { InputType } from 'zlib';                                   //libreria inutile
 import { Messaggio } from './types';
 import ChatGPT from './MessageChatGPT';
 import { ThemeContext } from './App';
@@ -12,7 +11,6 @@ const Rectangle: React.FC = () => {
   const [messageArray, setMessageArray] = useState<Messaggio[]>([]);
 
   const themeContext = useContext(ThemeContext)
-  console.log(themeContext)
   if (!themeContext) {
     throw new Error('ThemeContext must be used within a ThemeContext.Provider');
   }

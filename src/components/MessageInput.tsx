@@ -1,7 +1,5 @@
-import React, { ChangeEvent, useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { ThemeContext } from './App';
-import { toTry } from './Sidebar';
-import { keyboard, keyboardKey } from '@testing-library/user-event/dist/keyboard';
 
 interface MessageInputProps {
   message: string;

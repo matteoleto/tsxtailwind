@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState } from 'react';
 import Sidebar from './Sidebar';  // Assicurati di avere il percorso corretto
 import Rectangle from './Rectangle'; // Assicurati di avere il percorso corretto
 
@@ -10,7 +10,7 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType|undefined>(undefined)
 
 const App: React.FC = () => {
-  const [color, setColor] = useState<string>("");
+  const [color, setColor] = useState<string>("blue");
   return (
     <div className="App flex">
       <ThemeContext.Provider value={{color, setColor}}>

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, {  useContext } from 'react';
 import {ThemeContext} from './App'
 
 const Sidebar: React.FC = () => {
@@ -37,17 +37,16 @@ const Sidebar: React.FC = () => {
     </div>
   );
 };
- function cambiaColore(n: number): string {
+ function cambiaColore(numInput: number): string {
   let coloreSelezionato = "";
-  switch (n) {
+  switch (numInput) {
     case 1: coloreSelezionato = "red"; break;
     case 2: coloreSelezionato = "green"; break;
     case 3: coloreSelezionato = "purple"; break;
     case 4: coloreSelezionato = "yellow"; break;
     default: coloreSelezionato = "blue"; break;
   }
-  toTry = coloreSelezionato
   return coloreSelezionato;
 }
-export let toTry: string
+
 export default Sidebar;
