@@ -1,0 +1,67 @@
+davidedelbianco@IHD00080 tsxtailwind % Oops! Something went wrong! :(
+
+ESLint: 8.57.0
+
+A config object is using the "parser" key, which is not supported in flat config system.
+
+Flat config uses "languageOptions.parser" to override the default parser.
+
+Please see the following page for information on how to convert your config object into the correct format:
+https://eslint.org/docs/latest/use/configure/migration-guide#custom-parsers
+> npm run eslint  
+> 
+davidedelbianco@IHD00080 tsxtailwind % npm run eslint                
+
+> my-project@0.1.0 eslint
+> eslint src
+
+(node:12314) Warning: To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+Oops! Something went wrong! :(
+
+ESLint: 8.57.0
+
+/Users/davidedelbianco/tsxtailwind/eslint.config.js:1
+import typeParser from "@typescript/eslint-parser";
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at cjsLoader (node:internal/modules/esm/translators:348:17)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:297:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:222:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:316:24)
+    at async loadFlatConfigFile (/Users/davidedelbianco/tsxtailwind/node_modules/eslint/lib/eslint/flat-eslint.js:303:21)
+davidedelbianco@IHD00080 tsxtailwind % npm run eslint
+
+> my-project@0.1.0 eslint
+> eslint src
+
+(node:12352) Warning: To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+Oops! Something went wrong! :(
+
+ESLint: 8.57.0
+
+/Users/davidedelbianco/tsxtailwind/eslint.config.js:1
+import babelParser from "@babel/eslint-parser";
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at cjsLoader (node:internal/modules/esm/translators:348:17)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:297:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:222:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:316:24)
+    at async loadFlatConfigFile (/Users/davidedelbianco/tsxtailwind/node_modules/eslint/lib/eslint/flat-eslint.js:303:21)
+davidedelbianco@IHD00080 tsxtailwind % 
