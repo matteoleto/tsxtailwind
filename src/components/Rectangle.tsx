@@ -17,18 +17,25 @@ const Rectangle: React.FC = () => {
   const {color, setColor} = themeContext
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => { 
-    setMessage(e.target.value);
+    setMessage(e.target.value)
   };
 
   const handleSendMessage = async() => {
     
     if (message.trim()) {
-      let inArray: Messaggio = { text: message, sender: true };
-      setMessageArray((state) => [...state, inArray]);
-      let x : Messaggio|null = await ChatGPT(message)
+      let addToArray: Messaggio = { text: message, sender: true }
+      setMessageArray((state) => [...state, addToArray])
+      const lenghtToCheck : number = messageArray.length
+      let x : Messaggio|null = await ChatGPT(message, messageArray)
       if(x != null)
         setMessageArray((state) => [...state, x])
-      
+      else
+      {
+        let messageArrayReplacer : Messaggio[] = []
+        for(let i=0; i < (messageArray.length); i++)
+          messageArrayReplacer.push(messageArray[i])
+        setMessageArray(messageArrayReplacer)
+      }
       setMessage('');
     }
   };
@@ -37,7 +44,7 @@ const Rectangle: React.FC = () => {
     <div className="chat-container flex-1 h-screen p-4 bg-white">
       <div className="chat-box">
         <h1 className={"text-2xl font-bold mb-5 text-"+color+"-700"}>Chat</h1>
-        <p className="chat-subheader">Lista Messaggi.</p>
+        <p className="chat-subheader">Lista Messaggi:</p>
         <MessageList 
           messages={messageArray} 
         />

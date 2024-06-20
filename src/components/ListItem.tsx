@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { Messaggio } from './types';
 import { ThemeContext } from './App';
+import { error } from 'console';
+import MessageInput from './MessageInput';
+import { text } from 'stream/consumers';
 
 
 function ListItem(prop: Messaggio) {
@@ -26,11 +29,16 @@ function ListItem(prop: Messaggio) {
       <div className="flex-1">{message}</div>
       <button className="bg-gray-400 hover:bg-gray-600 text-white rounded-full h-8 w-8 flex items-center justify-center" onClick={() =>
         {
-            let getValueTextA:string = document.getElementsByClassName("textarea-primary bg-slate-400").item(0)?.value
+            const textareaObj = document.getElementsByClassName("flex-grow bg-"+color+"-500 text-white rounded-full p-2 focus:outline-none resize-none ml-4 bg-blue-500").item(0)
+            let getValueTextA:string = textareaObj?.value
             if (!getValueTextA)
               alert("Inserisci un valore nella barra sottostante")
             else
+            {
               chgMess(getValueTextA)
+              
+            }  
+            
         }
     }>
         <FontAwesomeIcon icon={faEdit} />
