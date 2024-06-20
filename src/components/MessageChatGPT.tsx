@@ -22,8 +22,8 @@ type Response = {
     data: Array<ResponseData>;
 };
 
-async function MessageChatGPT(cityToSearch: string, messageArrayModify: Messaggio[]): Promise<Messaggio | null> {
-    try {
+async function MessageChatGPT(cityToSearch: string): Promise<Messaggio> {
+    
         const token = await LoginAPI();
 
         const coords = cityCords.get(cityToSearch);
@@ -36,10 +36,7 @@ async function MessageChatGPT(cityToSearch: string, messageArrayModify: Messaggi
 
         const value = response.data.data[0].coordinates[0].dates[0].value;
         return { text: ""+value, sender: false };
-    } catch (error) {
-        alert("Città inserita non valida")
-        return null;
-    }
+    
 }
 
 export default MessageChatGPT;

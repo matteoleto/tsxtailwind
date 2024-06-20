@@ -21,22 +21,16 @@ const Rectangle: React.FC = () => {
   };
 
   const handleSendMessage = async() => {
-    
     if (message.trim()) {
-      let addToArray: Messaggio = { text: message, sender: true }
-      setMessageArray((state) => [...state, addToArray])
-      
-      let x : Messaggio|null = await ChatGPT(message, messageArray)
-      if(x != null)
-        setMessageArray((state) => [...state, x])
-      else
-      {
-        let messageArrayReplacer : Messaggio[] = []
-        for(let i=0; i < (messageArray.length); i++)
-          messageArrayReplacer.push(messageArray[i])
-        setMessageArray(messageArrayReplacer)
+      try{
+        let messageFromMeteo : Messaggio|null = await ChatGPT(message)
+        let addToArray: Messaggio = { text: message, sender: true }
+        setMessageArray((state) => [...state, addToArray])
+        setMessageArray((state) => [...state, messageFromMeteo])
+        setMessage('');
+      }catch(error){
+        alert("Città inserita non valida")
       }
-      setMessage('');
     }
   };
   

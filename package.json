@@ -48,14 +48,20 @@
     ]
   },
   "devDependencies": {
+    "@eslint/compat": "^1.1.0",
+    "@eslint/js": "^9.5.0",
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@types/node": "^20.11.5",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
+    "eslint": "^9.5.0",
+    "eslint-plugin-react": "^7.34.3",
     "express": "^4.19.2",
+    "globals": "^15.6.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4",
+    "typescript-eslint": "^7.13.1",
     "vite": "^5.1.1",
     "vite-tsconfig-paths": "^4.3.1",
     "vitest": "^1.6.0"
