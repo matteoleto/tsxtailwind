@@ -23,8 +23,8 @@ const Rectangle: React.FC = () => {
   const handleSendMessage = async() => {
     if (message.trim()) {
       try{
-        let messageFromMeteo : Messaggio|null = await ChatGPT(message)
-        let addToArray: Messaggio = { text: message, sender: true }
+        const messageFromMeteo : Messaggio|null = await ChatGPT(message)
+        const addToArray: Messaggio = { text: message, sender: true }
         setMessageArray((state) => [...state, addToArray])
         setMessageArray((state) => [...state, messageFromMeteo])
         setMessage('');

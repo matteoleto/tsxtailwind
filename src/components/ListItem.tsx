@@ -30,7 +30,7 @@ function ListItem(prop: Messaggio) {
       <button className="bg-gray-400 hover:bg-gray-600 text-white rounded-full h-8 w-8 flex items-center justify-center" onClick={() =>
         {
             const textareaObj = document.getElementsByClassName("flex-grow bg-"+color+"-500 text-white rounded-full p-2 focus:outline-none resize-none ml-4 bg-blue-500").item(0)
-            let getValueTextA:string = textareaObj?.value
+            const getValueTextA:string = textareaObj?.value
             if (!getValueTextA)
               alert("Inserisci un valore nella barra sottostante")
             else
