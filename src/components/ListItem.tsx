@@ -3,9 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { Messaggio } from './types';
 import { ThemeContext } from './App';
-import { error } from 'console';
-import MessageInput from './MessageInput';
-import { text } from 'stream/consumers';
 
 
 function ListItem(prop: Messaggio) {
