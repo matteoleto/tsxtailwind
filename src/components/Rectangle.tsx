@@ -25,7 +25,7 @@ const Rectangle: React.FC = () => {
     if (message.trim()) {
       let addToArray: Messaggio = { text: message, sender: true }
       setMessageArray((state) => [...state, addToArray])
-      const lenghtToCheck : number = messageArray.length
+      
       let x : Messaggio|null = await ChatGPT(message, messageArray)
       if(x != null)
         setMessageArray((state) => [...state, x])
