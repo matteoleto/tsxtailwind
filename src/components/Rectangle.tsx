@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 
-import { ThemeContext } from "./App";
 import ChatGPT from "./MessageChatGPT";
 import MessageInput from "./MessageInput";
 import MessageList from "./MessageList";
+import { ThemeContext } from "./ThemeContext";
 import { Messaggio } from "./types";
 
 const Rectangle: React.FC = () => {

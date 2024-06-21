@@ -1,14 +1,8 @@
-import React, { createContext, useState } from "react";
+import React, { useState } from "react";
 
 import Rectangle from "./Rectangle"; // Assicurati di avere il percorso corretto
 import Sidebar from "./Sidebar"; // Assicurati di avere il percorso corretto
-
-type ThemeContextType = {
-  color: string;
-  setColor: React.Dispatch<React.SetStateAction<string>>;
-};
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+import { ThemeContext } from "./ThemeContext";
 
 const App: React.FC = () => {
   const [color, setColor] = useState<string>("blue");
@@ -22,5 +16,4 @@ const App: React.FC = () => {
   );
 };
 
-export { ThemeContext };
 export default App;

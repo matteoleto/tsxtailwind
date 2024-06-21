@@ -3,7 +3,7 @@ import React, { ReactElement, useContext, useState } from "react";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { ThemeContext } from "./App";
+import { ThemeContext } from "./ThemeContext";
 import { Messaggio } from "./types";
 
 function ListItem(prop: Messaggio): ReactElement<HTMLElement> {

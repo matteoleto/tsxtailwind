@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 // eslint-disable-next-line import/no-cycle
-import { ThemeContext } from "./App";
+import { ThemeContext } from "./ThemeContext";
 
 const Sidebar: React.FC = () => {
   const themeContext = useContext(ThemeContext);
