@@ -17,8 +17,8 @@ const App: React.FC = () => {
       <ThemeContext.Provider value={{ color, setColor }}>
         <Sidebar />
         <Rectangle />
-	</ThemeContext.Provider>
-	</div>
+      </ThemeContext.Provider>
+    </div>
   );
 };
 

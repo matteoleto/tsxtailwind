@@ -136,8 +136,6 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     // eslint-plugin-react
     "react/jsx-boolean-value": 1,
-    "react/jsx-indent-props": ["error", "tab"],
-    "react/jsx-indent": ["error", "tab"],
     "react/prop-types": "off",
     "react/jsx-filename-extension": [
       "warn",

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { ReactElement, useContext, useState } from "react";
 
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ThemeContext } from "./App";
 import { Messaggio } from "./types";
 
-function ListItem(prop: Messaggio) {
+function ListItem(prop: Messaggio): ReactElement<HTMLElement> {
   const [message, chgMess] = useState<string>(prop.text);
 
   const themeContext = useContext(ThemeContext);
@@ -28,8 +28,8 @@ function ListItem(prop: Messaggio) {
     <div className={chId}>
       <div className="flex-1">{message}</div>
       <button
-		className="bg-gray-400 hover:bg-gray-600 text-white rounded-full h-8 w-8 flex items-center justify-center"
-		onClick={() => {
+        className="bg-gray-400 hover:bg-gray-600 text-white rounded-full h-8 w-8 flex items-center justify-center"
+        onClick={() => {
           const textareaObj = document
             .getElementsByClassName(
               `flex-grow bg-${
@@ -46,8 +46,8 @@ function ListItem(prop: Messaggio) {
         }}
       >
         <FontAwesomeIcon icon={faEdit} />
-	</button>
-	</div>
+      </button>
+    </div>
   );
 }
 export default ListItem;

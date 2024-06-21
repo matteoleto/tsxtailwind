@@ -16,7 +16,6 @@ export function LoginAPI(): Promise<string | null> {
       return token;
     })
     .catch(function (err) {
-      console.log("something went wrong", err);
       return null;
     });
 }

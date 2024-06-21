@@ -33,9 +33,9 @@ const Sidebar: React.FC = () => {
             className="h-10 w-10 rounded-full bg-yellow-600 shadow-xl hover:bg-yellow-700 focus:ring-4 focus:ring-yellow-300 transform transition-transform hover:-translate-y-2 active:translate-y-0 active:shadow-none text-blue-600"
             onClick={() => setColor(cambiaColore(4))}
           ></button>
-	</div>
-	</div>
-	</div>
+        </div>
+      </div>
+    </div>
   );
 };
 function cambiaColore(numInput: number): string {

@@ -16,11 +16,13 @@ const Rectangle: React.FC = () => {
   }
   const { color, setColor } = themeContext;
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement>,
+  ): void => {
     setMessage(e.target.value);
   };
 
-  const handleSendMessage = async () => {
+  const handleSendMessage = async (): Promise<void> => {
     if (message.trim()) {
       try {
         const messageFromMeteo: Messaggio | null = await ChatGPT(message);
@@ -46,12 +48,10 @@ const Rectangle: React.FC = () => {
           handleSendMessage={handleSendMessage}
         />
         <i
-		className={
-            `fas fa-comment-alt absolute top-4 right-4 text-${  color  }-500`
-          }
+          className={`fas fa-comment-alt absolute top-4 right-4 text-${color}-500`}
         ></i>
-	</div>
-	</div>
+      </div>
+    </div>
   );
 };
 export default Rectangle;

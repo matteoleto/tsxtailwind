@@ -10,7 +10,7 @@ interface MessageListProps {
 const MessageList: React.FC<MessageListProps> = ({ messages }) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const scrollToBottom = () => {
+  const scrollToBottom = (): void => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -21,12 +21,16 @@ const MessageList: React.FC<MessageListProps> = ({ messages }) => {
   return (
     <div className="message-list">
       <div className="overflow-y-auto h-full">
-        {messages.map((messages) => (
-          <ListItem text={messages.text} sender={messages.sender}></ListItem>
+        {messages.map((message, index) => (
+          <ListItem
+            key={index}
+            text={message.text}
+            sender={message.sender}
+          ></ListItem>
         ))}
         <div ref={messagesEndRef} />
-	</div>
-	</div>
+      </div>
+    </div>
   );
 };
 
