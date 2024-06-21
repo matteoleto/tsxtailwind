@@ -1,12 +1,13 @@
-import React, {  useContext } from 'react';
-import {ThemeContext} from './App'
+import React, { useContext } from "react";
+
+import { ThemeContext } from "./App";
 
 const Sidebar: React.FC = () => {
-  const themeContext = useContext(ThemeContext)
+  const themeContext = useContext(ThemeContext);
   if (!themeContext) {
-    throw new Error('ThemeContext must be used within a ThemeContext.Provider');
+    throw new Error("ThemeContext must be used within a ThemeContext.Provider");
   }
-  const {color, setColor} = themeContext
+  const { color, setColor } = themeContext;
   return (
     <div className={`bg-${color}-600 h-screen w-72 p-4`}>
       <h2 className="mb-4 pt-4 text-4xl font-bold text-white"></h2>
@@ -21,7 +22,7 @@ const Sidebar: React.FC = () => {
             onClick={() => setColor(cambiaColore(1))}
           ></button>
           <button
-            className="h-10 w-10 rounded-full bg-green-600 shadow-xl hover:bg-green-700 focus:ring-4 focus:ring-green-300 transform transition-transform hover:-translate-y-2 active:translate-y-0 active:shadow-none text-blue-600" 
+            className="h-10 w-10 rounded-full bg-green-600 shadow-xl hover:bg-green-700 focus:ring-4 focus:ring-green-300 transform transition-transform hover:-translate-y-2 active:translate-y-0 active:shadow-none text-blue-600"
             onClick={() => setColor(cambiaColore(2))}
           ></button>
           <button
@@ -32,19 +33,29 @@ const Sidebar: React.FC = () => {
             className="h-10 w-10 rounded-full bg-yellow-600 shadow-xl hover:bg-yellow-700 focus:ring-4 focus:ring-yellow-300 transform transition-transform hover:-translate-y-2 active:translate-y-0 active:shadow-none text-blue-600"
             onClick={() => setColor(cambiaColore(4))}
           ></button>
-        </div>
-      </div>
-    </div>
+	</div>
+	</div>
+	</div>
   );
 };
- function cambiaColore(numInput: number): string {
+function cambiaColore(numInput: number): string {
   let coloreSelezionato = "";
   switch (numInput) {
-    case 1: coloreSelezionato = "red"; break;
-    case 2: coloreSelezionato = "green"; break;
-    case 3: coloreSelezionato = "purple"; break;
-    case 4: coloreSelezionato = "yellow"; break;
-    default: coloreSelezionato = "blue"; break;
+    case 1:
+      coloreSelezionato = "red";
+      break;
+    case 2:
+      coloreSelezionato = "green";
+      break;
+    case 3:
+      coloreSelezionato = "purple";
+      break;
+    case 4:
+      coloreSelezionato = "yellow";
+      break;
+    default:
+      coloreSelezionato = "blue";
+      break;
   }
   return coloreSelezionato;
 }

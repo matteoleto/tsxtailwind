@@ -1,1 +1,1 @@
-export type Messaggio = { text:string ; sender:boolean}
+export type Messaggio = { text: string; sender: boolean };
