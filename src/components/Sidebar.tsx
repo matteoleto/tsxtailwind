@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 
+// eslint-disable-next-line import/no-cycle
 import { ThemeContext } from "./App";
 
 const Sidebar: React.FC = () => {
@@ -8,9 +9,30 @@ const Sidebar: React.FC = () => {
     throw new Error("ThemeContext must be used within a ThemeContext.Provider");
   }
   const { color, setColor } = themeContext;
+
+  function cambiaColore(numInput: number): string {
+    let coloreSelezionato = "";
+    switch (numInput) {
+      case 1:
+        coloreSelezionato = "red";
+        break;
+      case 2:
+        coloreSelezionato = "green";
+        break;
+      case 3:
+        coloreSelezionato = "purple";
+        break;
+      case 4:
+        coloreSelezionato = "yellow";
+        break;
+      default:
+        coloreSelezionato = "blue";
+        break;
+    }
+    return coloreSelezionato;
+  }
   return (
     <div className={`bg-${color}-600 h-screen w-72 p-4`}>
-      <h2 className="mb-4 pt-4 text-4xl font-bold text-white"></h2>
       <div className="">
         <div className="flex flex-col gap-2">
           <button
@@ -38,26 +60,5 @@ const Sidebar: React.FC = () => {
     </div>
   );
 };
-function cambiaColore(numInput: number): string {
-  let coloreSelezionato = "";
-  switch (numInput) {
-    case 1:
-      coloreSelezionato = "red";
-      break;
-    case 2:
-      coloreSelezionato = "green";
-      break;
-    case 3:
-      coloreSelezionato = "purple";
-      break;
-    case 4:
-      coloreSelezionato = "yellow";
-      break;
-    default:
-      coloreSelezionato = "blue";
-      break;
-  }
-  return coloreSelezionato;
-}
 
 export default Sidebar;
