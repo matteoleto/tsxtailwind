@@ -145,7 +145,6 @@ export const cityCords = new Map<string, string>([
   ["Strasbourg", "48.5734,7.7521"],
   ["Dresden", "51.0504,13.7373"],
   ["Ghent", "51.0543,3.7174"],
-  ["Gothenburg", "57.7089,11.9746"],
   ["Zaragoza", "41.6488,-0.8891"],
   ["Bilbao", "43.2630,-2.9340"],
   ["Lisbon", "38.7163,-9.1393"],
