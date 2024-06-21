@@ -22,7 +22,7 @@ Oops! Something went wrong! :(
 
 ESLint: 8.57.0
 
-/Users/davidedelbianco/tsxtailwind/eslint.config.js:1
+/Users/davidedelbianco/tsxtailwind/.eslintrc.js:1
 import typeParser from "@typescript/eslint-parser";
 ^^^^^^
 
@@ -49,7 +49,7 @@ Oops! Something went wrong! :(
 
 ESLint: 8.57.0
 
-/Users/davidedelbianco/tsxtailwind/eslint.config.js:1
+/Users/davidedelbianco/tsxtailwind/.eslintrc.js:1
 import babelParser from "@babel/eslint-parser";
 ^^^^^^
 

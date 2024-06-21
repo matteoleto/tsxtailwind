@@ -1,5 +1,6 @@
 import babelParser from "@babel/eslint-parser";
 module.exports = {
+	
 	parser: babelParser,
 	parserOptions: {
 		tsconfigRootDir: process.cwd()
