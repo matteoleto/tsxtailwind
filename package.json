@@ -22,7 +22,8 @@
     "dev": "vite",
     "try-example-openai": "node api/example.tsx",
     "generate-keys": "node GeneratoreKeys.js",
-    "eslint": "eslint src"
+    "eslint": "eslint src",
+    "test": "npx vitest"
   },
   "browserslist": {
     "production": [
