@@ -33,7 +33,9 @@ const Sidebar: React.FC = () => {
   }
 
   return (
-    <div className={`bg-${color}-600 h-screen w-72 p-4 flex items-center justify-center`}>
+    <div
+      className={`bg-${color}-600 h-screen w-72 p-4 flex items-center justify-center`}
+    >
       <div className="bg-gray-300 p-4 rounded-lg">
         <div className="flex flex-col gap-2">
           <button
