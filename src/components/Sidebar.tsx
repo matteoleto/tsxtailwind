@@ -32,7 +32,9 @@ const Sidebar: React.FC = () => {
     return coloreSelezionato;
   }
   return (
-    <div className={`bg-${color}-600 h-screen w-72 p-4 flex items-center justify-center`}>
+    <div
+      className={`bg-${color}-600 h-screen w-72 p-4 flex items-center justify-center`}
+    >
       <div className="flex flex-col gap-2">
         <button
           id="blue button"
