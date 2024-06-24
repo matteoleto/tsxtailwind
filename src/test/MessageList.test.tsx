@@ -11,7 +11,7 @@ describe("ListItem", () => {
   const context = { color: "ciao", setColor: (): void => {} };
   it("renders the message text", () => {
     const messaggioTemporaneo: Messaggio = {
-      text: "Hello, World!",
+      text: "papapa",
       sender: true,
     };
     render(
@@ -19,6 +19,6 @@ describe("ListItem", () => {
         <ListItem {...messaggioTemporaneo} />
       </ThemeContext.Provider>,
     );
-    expect(screen.getByText("Hello, World!"));
+    expect(screen.getByText("papapa"));
   });
 });
